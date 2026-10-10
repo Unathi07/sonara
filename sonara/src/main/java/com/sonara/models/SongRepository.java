@@ -1,4 +1,9 @@
 package com.sonara.models;
 
-public class SongRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * Provides database opeations for the Song entity.
+ */
+public interface SongRepository extends JpaRepository<Song, Long> {
 }
