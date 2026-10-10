@@ -34,4 +34,15 @@ public class SongService {
     public void deleteSong(Long id) {
         songRepository.deleteById(id);
     }
+
+    public Optional<Song> updateSong(Long id, Song updatedSong) {
+        return songRepository.findById(id)
+                .map(existingSong -> {
+                    existingSong.setTitle(updatedSong.getTitle());
+                    existingSong.setArtist(updatedSong.getArtist());
+                    existingSong.setGenre(updatedSong.getGenre());
+                    existingSong.setDurationSeconds(updatedSong.getDurationSeconds());
+                    return songRepository.save(existingSong);
+                });
+    }
 }

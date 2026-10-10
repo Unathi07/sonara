@@ -23,3 +23,36 @@ Accept: application/json
 
 ### Delete a song
 DELETE http://localhost:8080/api/songs/1
+
+### Create a song to test updating
+POST http://localhost:8080/api/songs
+Content-Type: application/json
+
+{
+  "title": "Best Part",
+  "artist": "Daniel Caesar",
+  "genre": "R&B",
+  "durationSeconds": 210
+}
+
+### Update a song
+PUT http://localhost:8080/api/songs/2
+Content-Type: application/json
+
+{
+  "title": "Best Part (Remastered)",
+  "artist": "Daniel Caesar",
+  "genre": "Soul",
+  "durationSeconds": 215
+}
+
+### Update a song that does not exist
+PUT http://localhost:8080/api/songs/999
+Content-Type: application/json
+
+{
+  "title": "Nonexistent Song",
+  "artist": "Unknown Artist",
+  "genre": "Unknown Genre",
+  "durationSeconds": 0
+}
