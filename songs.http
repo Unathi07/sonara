@@ -1,0 +1,25 @@
+### Get all songs
+GET http://localhost:8080/api/songs
+Accept: application/json
+
+### Create a song
+POST http://localhost:8080/api/songs
+Content-Type: application/json
+
+{
+  "title": "Best Part",
+  "artist": "Daniel Caesar",
+  "genre": "R&B",
+  "durationSeconds": 210
+}
+
+### Get song by ID
+GET http://localhost:8080/api/songs/1
+Accept: application/json
+
+### Get a song that does not exist
+GET http://localhost:8080/api/songs/999
+Accept: application/json
+
+### Delete a song
+DELETE http://localhost:8080/api/songs/1
